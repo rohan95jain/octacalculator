@@ -1,0 +1,192 @@
+<!doctype html><html lang="en-IN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OCTA Build Calculators — Construction calculators for India</title>
+<meta name="description" content="Free construction calculators for India: concrete, paint, steel, drywall, tiles, unit conversion, wire size, lighting cost, geyser capacity, pipe volume and block quantity.">
+<link rel="icon" href="favicon.png"><meta name="theme-color" content="#B5121B">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#B5121B;--red2:#8E0E15;--tint:#FCECED;--bg:#F5F5F4;--card:#fff;--ink:#1A1A1A;--mute:#5F6368;--line:#E4E2E0}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;font-family:'General Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.5;padding-bottom:72px}
+header{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--red);color:#fff;position:sticky;top:0;z-index:20}
+header a.logo img{height:30px;display:block}header .t{font-size:12px;opacity:.9;line-height:1.2}
+header select{margin-left:auto;max-width:48%;background:#fff;color:var(--ink);border:0;border-radius:8px;padding:8px;font:inherit;font-size:14px}
+.wrap{max-width:1180px;width:100%;margin:0 auto;padding:14px;flex:1}
+nav#nav{display:none}
+main section{display:none}main section.on{display:block}
+h1{font-size:22px;margin:4px 0 4px;line-height:1.2}.lead{color:var(--mute);margin:0 0 10px;font-size:15px}
+.what{background:var(--tint);border-left:4px solid var(--red);border-radius:8px;padding:10px 12px;font-size:14px;margin-bottom:14px}.what b{color:var(--red2)}
+.grid{display:grid;gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.card h3{margin:0 0 12px;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute)}
+.f{display:grid;grid-template-columns:1fr 1fr;gap:12px}.f .full{grid-column:1/-1}
+label{display:block;font-size:13px;font-weight:600;margin-bottom:4px}
+input,select,textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:9px;font:inherit;font-size:16px;background:#fff;min-height:46px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--red);border-color:transparent}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.r{position:relative;background:#FAFAF9;border:1px solid var(--line);border-radius:9px;padding:10px 12px;cursor:default}
+.r small{display:block;color:var(--mute);font-size:12px}.r strong{font-size:17px;font-variant-numeric:tabular-nums}
+.r.big{grid-column:1/-1;background:var(--tint);border-color:#F3C4C7}.r.big strong{font-size:24px;color:var(--red)}
+.r.has{cursor:pointer}.r.has small::after{content:" ₹";font-weight:700;color:var(--red)}
+.tip{display:none;position:absolute;left:8px;right:8px;bottom:calc(100% + 6px);background:#1A1A1A;color:#fff;font-size:13px;padding:8px 10px;border-radius:8px;z-index:5;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+.tip b{color:#FFB3B8}.r.has:hover .tip,.r.has.show .tip{display:block}
+.hint{font-size:12px;color:var(--mute);margin:8px 0 0}
+.note{font-size:13px;color:var(--mute);margin-top:12px;border-top:1px dashed var(--line);padding-top:10px}
+.home{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.home a{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-decoration:none;color:var(--ink);font-weight:600;font-size:15px;min-height:84px;display:flex;flex-direction:column;justify-content:space-between}
+.home a i{font-style:normal;color:var(--red);font-size:12px;font-weight:700}
+.home a.sug{background:var(--red);color:#fff;border-color:var(--red)}.home a.sug i{color:#fff}
+.tabs{position:fixed;bottom:0;left:0;right:0;display:flex;background:#fff;border-top:1px solid var(--line);z-index:20}
+.tabs a{flex:1;text-align:center;padding:10px 4px 12px;font-size:12px;font-weight:600;color:var(--mute);text-decoration:none}.tabs a.on{color:var(--red)}
+.tabs a span{display:block;font-size:18px;line-height:1}
+.chat{display:flex;flex-direction:column;gap:8px;min-height:220px;max-height:50vh;overflow:auto;padding:4px 0 10px}
+.msg{max-width:85%;padding:10px 12px;border-radius:14px;font-size:15px}.msg.bot{background:#F0F0EF;border-bottom-left-radius:4px}.msg.me{background:var(--red);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.send{display:flex;gap:8px}.send textarea{min-height:52px;resize:vertical}.send button,.btn{background:var(--red);color:#fff;border:0;border-radius:9px;padding:0 18px;font:inherit;font-weight:600;min-height:46px;cursor:pointer}
+footer{background:#1A1A1A;color:#ccc;font-size:14px;padding:20px 16px;text-align:center}footer a{color:#fff}footer img{height:26px;margin-bottom:8px}
+@media(min-width:900px){body{padding-bottom:0}.tabs{display:none}header select{display:none}
+.wrap{display:grid;grid-template-columns:240px 1fr;gap:22px;padding:22px}
+nav#nav{display:block;position:sticky;top:70px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px}
+nav#nav a{display:flex;gap:10px;padding:8px 10px;border-radius:8px;color:var(--ink);text-decoration:none;font-weight:500;font-size:15px}
+nav#nav a:hover{background:#F3F2F1}nav#nav a.on{background:var(--tint);color:var(--red)}nav#nav a i{font-style:normal;flex:0 0 20px;color:var(--mute);font-size:12px}
+.grid{grid-template-columns:1fr 1fr}h1{font-size:26px}.home{grid-template-columns:repeat(4,1fr)}}
+</style></head><body>
+<header><a class="logo" href="https://octabuild.in" target="_blank" rel="noopener" aria-label="OCTA Build website"><img src="logo.png" alt="OCTA"></a><div class="t">Build<br>Calculators</div><select id="jump" aria-label="Choose calculator"></select></header>
+<div class="wrap"><nav id="nav"></nav><main id="main"></main></div>
+<nav class="tabs"><a href="#home" id="t_home"><span>▦</span>All calculators</a><a href="#concrete" id="t_concrete"><span>◧</span>Concrete</a><a href="#units" id="t_units"><span>⇄</span>Converter</a><a href="#suggest" id="t_suggest"><span>✎</span>Suggest</a></nav>
+<footer><a href="https://octabuild.in" target="_blank" rel="noopener"><img src="logo.png" alt="OCTA Build"></a><br>OCTA Build · Construction &amp; building materials, Mumbai<br>WhatsApp / Call: <a href="https://wa.me/919152707445">+91 91527 07445</a> · <a href="https://octabuild.in" target="_blank" rel="noopener">octabuild.in</a><br><small>Rates are indicative MMR averages (Oct 2026), excl. GST &amp; transport. Estimates are thumb-rule; verify with your consultant and IS codes before ordering.</small></footer>
+<script>
+// Paste your Formspree form URL here (free at formspree.io), e.g. https://formspree.io/f/abcdwxyz
+const SUGGEST_URL='https://formspree.io/f/YOUR_FORM_ID';
+
+const $=id=>document.getElementById(id), v=id=>parseFloat($(id).value)||0, s=id=>$(id).value;
+const fmt=(n,d=2)=>isFinite(n)?n.toLocaleString('en-IN',{maximumFractionDigits:d,minimumFractionDigits:0}):'—';
+const inr=n=>'₹ '+fmt(n,0);
+const FT=0.3048, M3CFT=35.3147, M2SQFT=10.7639;
+const box=(arr)=>arr.map(([l,val,big,rt])=>{let tip='';if(rt){const k=RATE[rt[0]];tip=`<div class="tip">MMR avg: <b>${k[0]}</b>${rt[1]!=null&&isFinite(rt[1])?`<br>Approx. value: <b>${inr(rt[1]*k[1])}</b>`:''}<br><small>${k[2]||'Indicative, excl. GST & transport'}</small></div>`}
+return `<div class="r${big?' big':''}${rt?' has':''}" ${rt?'tabindex="0"':''}>${tip}<small>${l}</small><strong>${val}</strong></div>`}).join('')+(arr.some(x=>x[3])?'<p class="hint">Tap or hover results marked ₹ to see average MMR rates.</p>':'');
+const RATE={cement:['₹380 per 50 kg bag (OPC 53)',380],sand:['₹6,500 per brass (M-sand / crushed sand)',6500],agg:['₹5,000 per brass (20 mm)',5000],rmc:['₹5,400 per m³ (RMC M20, pumpable)',5400],
+paint:['₹300 per litre (interior emulsion)',300],primer:['₹190 per litre (water-based primer)',190],putty:['₹950 per 40 kg bag (white cement putty)',950/40,'Value shown per kg used'],
+steel:['₹62 per kg (Fe 500D TMT, primary brands)',62],board:['₹520 per board (12.5 mm, 8×4 ft)',520],stud:['₹48 per running metre (stud/track)',48],compound:['₹45 per kg (jointing compound)',45],
+tilead:['₹480 per 20 kg bag (C1T tile adhesive)',480],grout:['₹100 per kg (cementitious grout); epoxy ₹600–900/kg',100],
+cable:['1.5 mm² ₹1,700 · 2.5 mm² ₹2,700 · 4 mm² ₹4,300 · 6 mm² ₹6,400 per 90 m coil (FR copper)',null,'Brand-dependent (Polycab, Havells, Finolex)'],mcb:['₹180–300 per SP MCB · ₹700–1,100 per DP MCB',null],
+tariff:['₹8–11 per unit (Mumbai residential, avg. incl. charges)',null],led:['₹250–450 per 18–20 W LED batten',null],
+geyser:['15 L ₹7,000–10,000 · 25 L ₹9,000–14,000 · 35 L ₹12,000–18,000',null,'5-star storage geysers'],water:['₹2–3 per 1,000 L (tanker ₹1,500–2,500 per 10,000 L)',null],
+aac:['₹4,500 per m³ (≈ ₹70 per 6" AAC block)',4500],ccb:['₹45–60 per solid concrete block (6")',null],brick:['₹11 per red brick · ₹8 per fly ash brick',11],aacadh:['₹420 per 40 kg bag (AAC adhesive)',420/40,'Value shown per kg used']};
+const WHAT={concrete:'Gives <b>number of cement bags</b>, <b>sand</b> and <b>20 mm aggregate</b> (m³ and brass), wet volume for RMC orders, and water needed.',
+paint:'Gives <b>litres of paint</b> for the chosen coats, <b>primer</b> litres, <b>wall putty</b> in kg/bags, paintable area and paint cost.',
+steel:'Gives <b>TMT steel in kg and MT</b> for a member using thumb rules, its cost, and <b>bar weight per metre</b> for any diameter.',
+drywall:'Gives <b>number of gypsum boards</b>, <b>studs and tracks</b> (running metres), <b>screws</b>, <b>jointing compound</b> and <b>tape</b>.',
+tile:'Gives <b>number of tiles and boxes</b>, <b>tile adhesive bags</b>, <b>grout in kg</b> and tile cost for the area.',
+units:'Converts one value into <b>all units</b> of the category at once – including guntha, cent, brass, cft and quintal.',
+wire:'Gives the <b>recommended cable size (sq mm)</b>, load current, voltage drop and a <b>suggested MCB rating</b>.',
+lighting:'Gives <b>monthly and yearly electricity bill</b>, units consumed, and <b>savings and payback</b> if you switch to LED.',
+geyser:'Gives the <b>recommended geyser size in litres</b>, hot water needed per batch and <b>heat-up time</b>.',
+pipe:'Gives the <b>water volume held by the pipe</b> in litres, m³ and cft, plus litres per metre.',
+block:'Gives the <b>number of blocks/bricks</b>, masonry volume, and <b>cement + sand</b> (or AAC adhesive) for the joints.'};
+const inp=(id,l,val,o={})=>o.opts?`<div class="${o.full?'full':''}"><label for="${id}">${l}</label><select id="${id}">${o.opts.map(x=>Array.isArray(x)?`<option value="${x[0]}"${x[0]==val?' selected':''}>${x[1]}</option>`:`<option${x==val?' selected':''}>${x}</option>`).join('')}</select></div>`:`<div class="${o.full?'full':''}"><label for="${id}">${l}</label><input id="${id}" type="number" step="any" min="0" value="${val}"></div>`;
+const unitSel=(id,val='ft')=>inp(id,'Unit of dimensions',val,{opts:[['ft','Feet (ft)'],['m','Metre (m)']],full:1});
+const L=(x,u)=>u==='ft'?x*FT:x; // to metres
+
+const C=[
+{id:'concrete',n:'Concrete Calculator',i:'01',d:'Cement bags, sand and aggregate for slabs, beams, columns and footings using nominal mix (IS 456).',
+f:()=>unitSel('c_u')+inp('c_l','Length',10)+inp('c_b','Width / Breadth',10)+inp('c_d','Depth / Thickness',0.5)+inp('c_n','No. of members',1)+inp('c_g','Concrete grade','1:1.5:3',{opts:[['1:3:6','M10 (1:3:6)'],['1:2:4','M15 (1:2:4)'],['1:1.5:3','M20 (1:1.5:3)'],['1:1:2','M25 (1:1:2)']]})+inp('c_w','Wastage %',5),
+c:()=>{const u=s('c_u');let wet=L(v('c_l'),u)*L(v('c_b'),u)*L(v('c_d'),u)*v('c_n');wet*=1+v('c_w')/100;const dry=wet*1.54;const r=s('c_g').split(':').map(Number),t=r[0]+r[1]+r[2];
+const cem=dry*r[0]/t,sand=dry*r[1]/t,agg=dry*r[2]/t,bags=cem*1440/50;
+return box([['Cement (50 kg bags)',fmt(Math.ceil(bags),0)+' bags',1,['cement',Math.ceil(bags)]],['Wet volume',fmt(wet,3)+' m³ · '+fmt(wet*M3CFT,1)+' cft',0,['rmc',wet]],['Dry volume (×1.54)',fmt(dry,3)+' m³'],['Sand',fmt(sand,3)+' m³ · '+fmt(sand*M3CFT/100,2)+' brass',0,['sand',sand*M3CFT/100]],['Aggregate 20 mm',fmt(agg,3)+' m³ · '+fmt(agg*M3CFT/100,2)+' brass',0,['agg',agg*M3CFT/100]],['Cement weight',fmt(cem*1440,0)+' kg'],['Water (w/c 0.5)',fmt(cem*1440*0.5,0)+' litres',0,['water',null]]])},
+note:'Dry volume factor 1.54; cement density 1440 kg/m³ (1 bag = 0.0347 m³); 1 brass = 100 cft. For RMC, order the wet volume in m³. M25 and above should be design-mix per IS 10262.'},
+
+{id:'paint',n:'Paint Calculator',i:'02',d:'Paint, primer and wall putty for rooms – walls and ceiling, with door/window deductions.',
+f:()=>unitSel('p_u')+inp('p_l','Room length',12)+inp('p_b','Room width',10)+inp('p_h','Wall height',10)+inp('p_c','Include ceiling?','1',{opts:[['1','Yes'],['0','No']]})+inp('p_dr','No. of doors (7×3 ft)',1)+inp('p_wn','No. of windows (4×4 ft)',2)+inp('p_ct','No. of coats',2)+inp('p_cov','Paint coverage (sq ft/L/coat)',120)+inp('p_rate','Paint price (₹/L)',350),
+c:()=>{const u=s('p_u'),k=u==='ft'?1:M2SQFT;const l=v('p_l')*Math.sqrt(k),b=v('p_b')*Math.sqrt(k),h=v('p_h')*Math.sqrt(k);let a=2*(l+b)*h-v('p_dr')*21-v('p_wn')*16;if(s('p_c')==='1')a+=l*b;a=Math.max(a,0);
+const paint=a*v('p_ct')/v('p_cov'),primer=a/100,putty=a/15;
+return box([['Paint required',fmt(Math.ceil(paint*10)/10,1)+' litres',1,['paint',Math.ceil(paint)]],['Paintable area',fmt(a,0)+' sq ft · '+fmt(a/M2SQFT,1)+' m²'],['Primer (1 coat)',fmt(primer,1)+' litres',0,['primer',Math.ceil(primer)]],['Wall putty (2 coats)',fmt(putty,0)+' kg · '+Math.ceil(putty/40)+' bags of 40 kg',0,['putty',putty]],['Paint cost',inr(Math.ceil(paint)*v('p_rate'))]])},
+note:'Typical coverage per coat: interior emulsion 110–140 sq ft/L, exterior emulsion 50–70 sq ft/L (on rough plaster), enamel 120–140 sq ft/L. Primer ~100 sq ft/L, putty ~15 sq ft/kg for 2 coats. Check the brand label (Asian Paints, Berger etc.).'},
+
+{id:'steel',n:'Steel Consumption Calculator',i:'03',d:'TMT steel by thumb rule (kg/m³ of concrete) and bar weight by D²/162.',
+f:()=>unitSel('s_u')+inp('s_m','Member type','90',{opts:[['90','Slab (80–100 kg/m³)'],['140','Beam (120–160 kg/m³)'],['180','Column (150–200 kg/m³)'],['80','Footing (70–90 kg/m³)'],['120','Staircase (100–130 kg/m³)']],full:1})+inp('s_l','Length',10)+inp('s_b','Width',10)+inp('s_d','Depth / Thickness',0.5)+inp('s_r','Steel rate (₹/kg)',62)+`<div class="full"><h3 style="margin:10px 0 0">Bar weight</h3></div>`+inp('s_dia','Bar diameter (mm)',12,{opts:[8,10,12,16,20,25,32]})+inp('s_bl','Total bar length (m)',12),
+c:()=>{const u=s('s_u');const vol=L(v('s_l'),u)*L(v('s_b'),u)*L(v('s_d'),u);const kg=vol*v('s_m');const d=v('s_dia'),wpm=d*d/162;
+return box([['Estimated steel',fmt(kg,0)+' kg · '+fmt(kg/1000,3)+' MT',1,['steel',kg]],['Concrete volume',fmt(vol,3)+' m³'],['Steel cost',inr(kg*v('s_r'))],['Bar weight per metre',fmt(wpm,3)+' kg/m'],['Weight of bars',fmt(wpm*v('s_bl'),2)+' kg',0,['steel',wpm*v('s_bl')]],['Std 12 m bar weighs',fmt(wpm*12,2)+' kg']])},
+note:'Thumb-rule values are for budgeting only; final quantities come from the bar bending schedule (BBS). Residential RCC frame overall: approx. 3.5–4.5 kg per sq ft of built-up area.'},
+
+{id:'drywall',n:'Drywall Calculator',i:'04',d:'Gypsum boards, metal studs, tracks, screws, jointing compound and tape for partitions.',
+f:()=>unitSel('dw_u')+inp('dw_l','Wall length',20)+inp('dw_h','Wall height',10)+inp('dw_sz','Board size','32',{opts:[['24','6 ft × 4 ft (1830×1220)'],['32','8 ft × 4 ft (2440×1220)'],['40','10 ft × 4 ft (3050×1220)']]})+inp('dw_sd','Sides boarded','2',{opts:[['1','One side'],['2','Both sides']]})+inp('dw_ly','Layers per side',1)+inp('dw_o','Openings area (sq ft)',21)+inp('dw_w','Wastage %',10)+inp('dw_sp','Stud spacing (mm)',610,{opts:[[406,'406 mm'],[610,'610 mm']]}),
+c:()=>{const u=s('dw_u');const l=L(v('dw_l'),u)/FT,h=L(v('dw_h'),u)/FT;const face=Math.max(l*h-v('dw_o'),0);const area=face*v('dw_sd')*v('dw_ly');const boards=Math.ceil(area*(1+v('dw_w')/100)/v('dw_sz'));
+const studs=Math.ceil(l*FT*1000/v('dw_sp'))+1,studLen=studs*h*FT,track=2*l*FT,am2=area/M2SQFT;
+return box([['Gypsum boards',boards+' nos',1,['board',boards*v('dw_sz')/32]],['Board area',fmt(area,0)+' sq ft'],['Studs (vertical)',studs+' nos · '+fmt(studLen,1)+' rm',0,['stud',studLen]],['Floor + ceiling track',fmt(track,1)+' rm · '+Math.ceil(track/3)+' × 3 m',0,['stud',track]],['Drywall screws',fmt(Math.ceil(am2*15/100)*100,0)+' nos'],['Jointing compound',fmt(am2*0.35,1)+' kg',0,['compound',am2*0.35]],['Joint tape',fmt(am2*1.3,0)+' m']])},
+note:'Based on 12.5 mm board, 50/75 mm studs & tracks (3 m lengths). Screws ~15/m² per layer, compound ~0.35 kg/m², tape ~1.3 m/m². Follow manufacturer systems (Saint-Gobain Gyproc, USG Boral).'},
+
+{id:'tile',n:'Tile Calculator',i:'05',d:'Number of tiles and boxes, adhesive and grout for floors and walls.',
+f:()=>unitSel('t_u')+inp('t_l','Area length',12)+inp('t_b','Area width',10)+inp('t_sz','Tile size (mm)','600x600',{opts:['300x300','300x600','400x400','600x600','600x1200','800x800','800x1600','200x1200']})+inp('t_j','Joint width (mm)',2)+inp('t_th','Tile thickness (mm)',9)+inp('t_bx','Tiles per box',4)+inp('t_w','Wastage %',8)+inp('t_r','Tile price (₹/sq ft)',55),
+c:()=>{const u=s('t_u');const A=L(v('t_l'),u)*L(v('t_b'),u);const [a,b]=s('t_sz').split('x').map(Number);const tA=(a/1000)*(b/1000);const n=Math.ceil(A*(1+v('t_w')/100)/tA);const boxes=Math.ceil(n/v('t_bx'));
+const grout=((a+b)/(a*b))*v('t_th')*v('t_j')*1.6*A;const adh=A*M2SQFT/50;
+return box([['Tiles required',n+' nos · '+boxes+' boxes',1],['Area',fmt(A*M2SQFT,1)+' sq ft · '+fmt(A,2)+' m²'],['Tile adhesive (20 kg)',Math.ceil(adh)+' bags',0,['tilead',Math.ceil(adh)]],['Grout',fmt(grout,1)+' kg',0,['grout',grout]],['Tile cost',inr(boxes*v('t_bx')*tA*M2SQFT*v('t_r'))]])},
+note:'Grout = (L+W)/(L×W) × thickness × joint × 1.6 kg/m². Adhesive approx. 1 bag (20 kg) per 45–50 sq ft for large-format tiles with 6 mm notch trowel. Add 10–15% wastage for diagonal/herringbone laying.'},
+
+{id:'units',n:'Unit Converter',i:'06',d:'Length, area (incl. guntha, cent, acre), volume (incl. brass, cft) and weight units used in Indian construction.',
+f:()=>inp('u_t','Category','area',{opts:[['length','Length'],['area','Area / Land'],['volume','Volume'],['weight','Weight'],['pressure','Pressure / Strength']],full:1})+inp('u_v','Value',1)+inp('u_f','From','',{opts:[]}),
+init:()=>{$('u_t').onchange=()=>{fillU();calc('units')};fillU()},
+c:()=>{const U=UN[s('u_t')],f=U[s('u_f')]*v('u_v');return box(Object.entries(U).map(([k,x],i)=>[k,fmt(f/x,6),k===s('u_f')]))},
+note:'1 guntha = 1089 sq ft (Maharashtra), 1 cent = 435.6 sq ft, 1 ground = 2400 sq ft (Tamil Nadu), 1 brass = 100 cft. Bigha/biswa vary by state and are not included.'},
+
+{id:'wire',n:'Wire Size Calculator',i:'07',d:'Copper FR/FRLS PVC cable size for a load, checked for current capacity and voltage drop.',
+f:()=>inp('w_ph','Supply','1',{opts:[['1','Single phase 230 V'],['3','Three phase 415 V']]})+inp('w_p','Connected load (W)',3000)+inp('w_pf','Power factor',0.9)+inp('w_len','One-way cable length (m)',20)+inp('w_vd','Allowed voltage drop %',3)+inp('w_m','Conductor','cu',{opts:[['cu','Copper'],['al','Aluminium']]}),
+c:()=>{const ph=s('w_ph'),V=ph==='1'?230:415,P=v('w_p'),pf=v('w_pf')||1;const I=ph==='1'?P/(V*pf):P/(Math.sqrt(3)*V*pf);const al=s('w_m')==='al';
+let pick=null;for(const [mm,amp,R] of WT){const A=al?amp*0.78:amp,Rr=al?R*1.64:R;const vd=(ph==='1'?2:Math.sqrt(3))*I*Rr*v('w_len')/1000;if(A>=I*1.25&&vd/V*100<=v('w_vd')){pick=[mm,A,vd];break}}
+const mcb=[6,10,16,20,25,32,40,50,63,80,100,125].find(x=>x>=I*1.25)||'>125';
+if(!pick)return box([['Result','Load too high for table',1],['Current',fmt(I,2)+' A']]);
+return box([['Recommended cable',pick[0]+' sq mm '+(al?'Aluminium':'Copper'),1,['cable',null]],['Load current',fmt(I,2)+' A'],['Cable rating',fmt(pick[1],0)+' A'],['Voltage drop',fmt(pick[2],2)+' V ('+fmt(pick[2]/V*100,2)+'%)'],['Suggested MCB',mcb+' A',0,['mcb',null]]])},
+note:'Ratings: PVC insulated copper, 2 cables in conduit, ~40 °C ambient (indicative IS 694 / manufacturer data) with 25% safety margin. Domestic norms: lighting 1.5 sq mm, power sockets 2.5 sq mm, AC/geyser 4 sq mm. Verify with a licensed electrician.'},
+
+{id:'lighting',n:'Lighting Cost Calculator',i:'08',d:'Monthly and yearly electricity units (kWh) and bill for lights, plus savings from switching to LED.',
+f:()=>inp('l_n','No. of fixtures',10)+inp('l_w','Watt per fixture (current)',40)+inp('l_led','Watt per LED replacement',18)+inp('l_h','Hours used per day',8)+inp('l_d','Days per month',30)+inp('l_t','Tariff (₹ per unit/kWh)',9.5)+inp('l_c','LED cost per fixture (₹)',350),
+c:()=>{const k=v('l_n')*v('l_h')*v('l_d')/1000;const u1=k*v('l_w'),u2=k*v('l_led'),t=v('l_t');const save=(u1-u2)*t;const pay=save>0?v('l_n')*v('l_c')/save:Infinity;
+return box([['Monthly bill (current)',inr(u1*t),1,['tariff',null]],['Units per month',fmt(u1,1)+' kWh'],['Yearly bill',inr(u1*t*12)],['Monthly bill with LED',inr(u2*t),0,['led',null]],['Yearly saving with LED',inr(save*12)],['LED payback',isFinite(pay)?fmt(pay,1)+' months':'—']])},
+note:'1 unit = 1 kWh. Mumbai residential tariffs (MSEDCL / Adani / Tata / BEST) are slab-based; use your average ₹/unit including fixed & wheeling charges.'},
+
+{id:'geyser',n:'Geyser Capacity Calculator',i:'09',d:'Right storage geyser size (litres) for your family and heating time.',
+f:()=>inp('g_p','People using bathroom',4)+inp('g_m','Bathing style','25',{opts:[['20','Bucket bath (~20 L mixed)'],['40','Shower (~40 L mixed)'],['80','Bathtub (~80 L+)']]})+inp('g_s','People bathing back-to-back',2)+inp('g_tc','Cold water temp (°C)',25)+inp('g_tm','Bath water temp (°C)',40)+inp('g_th','Geyser set temp (°C)',60)+inp('g_kw','Heater rating (kW)',2),
+c:()=>{const mix=v('g_m')*v('g_s');const fr=(v('g_tm')-v('g_tc'))/(v('g_th')-v('g_tc'));const need=mix*fr/0.8;const sizes=[6,10,15,25,35,50,70,100];const rec=sizes.find(x=>x>=need)||'100+';
+const V=typeof rec==='number'?rec:need;const hrs=V*(v('g_th')-v('g_tc'))*1.163/1000/(v('g_kw')*0.95);
+return box([['Recommended geyser',rec+' litres',1,['geyser',null]],['Hot water needed',fmt(need,1)+' L'],['Mixed water per batch',fmt(mix,0)+' L'],['Heat-up time',fmt(hrs*60,0)+' minutes'],['Energy per full heat',fmt(V*(v('g_th')-v('g_tc'))*1.163/1000,2)+' kWh']])},
+note:'Assumes 80% usable draw-off from a storage tank. For kitchen use 1–3 L instant geysers; for 1–2 people 10–15 L; 3–4 people 25 L; larger families 35–50 L. Use 2 kW models on a 4 sq mm circuit with 16/20 A MCB.'},
+
+{id:'pipe',n:'Pipe Volume Calculator',i:'10',d:'Water holding volume of CPVC, uPVC, GI or HDPE pipes – useful for flushing, testing and pump sizing.',
+f:()=>inp('pi_du','Diameter unit','mm',{opts:[['mm','Millimetre (mm)'],['in','Inch']]})+inp('pi_d','Inner diameter',20)+inp('pi_lu','Length unit','m',{opts:[['m','Metre'],['ft','Feet']]})+inp('pi_l','Pipe length',30)+inp('pi_n','No. of runs',1),
+c:()=>{const d=s('pi_du')==='in'?v('pi_d')*0.0254:v('pi_d')/1000;const l=L(v('pi_l'),s('pi_lu'))*v('pi_n');const V=Math.PI/4*d*d*l;
+return box([['Volume of water',fmt(V*1000,2)+' litres',1],['In m³',fmt(V,5)+' m³'],['In cft',fmt(V*M3CFT,4)+' cft'],['Per metre',fmt(Math.PI/4*d*d*1000,3)+' L/m'],['Weight of water',fmt(V*1000,2)+' kg']])},
+note:'Use the inner diameter (ID). Nominal sizes: ½" (15 mm), ¾" (20 mm), 1" (25 mm) CPVC/uPVC have IDs smaller than the nominal OD — check the SDR/class chart from the manufacturer.'},
+
+{id:'block',n:'Block Quantity Calculator',i:'11',d:'AAC blocks, solid concrete blocks or red bricks with mortar/adhesive for masonry walls.',
+f:()=>unitSel('b_u')+inp('b_l','Wall length',20)+inp('b_h','Wall height',10)+inp('b_ty','Block type','aac150',{opts:[['aac100','AAC 600×200×100 mm'],['aac150','AAC 600×200×150 mm'],['aac200','AAC 600×200×200 mm'],['cc100','Solid concrete 400×200×100'],['cc150','Solid concrete 400×200×150'],['cc200','Solid concrete 400×200×200'],['brick','Red brick 230×110×75 (9" wall)'],['brick4','Red brick 230×110×75 (4.5" wall)'],['fly','Fly ash brick 230×100×75 (9" wall)']],full:1})+inp('b_o','Openings area (sq ft)',21)+inp('b_w','Wastage %',5)+inp('b_mr','Mortar ratio (C:S)','6',{opts:[['4','1:4'],['5','1:5'],['6','1:6']]}),
+c:()=>{const u=s('b_u');const t=BT[s('b_ty')];let A=L(v('b_l'),u)*L(v('b_h'),u)-v('b_o')/M2SQFT;A=Math.max(A,0);const W=A*t.w/1000;const j=t.j/1000;
+const unit=(t.l/1000+j)*(t.h/1000+j)*(t.d/1000+(t.wy?j:0));const n=Math.ceil(W/unit*(1+v('b_w')/100));const blk=Math.ceil(W/unit)*(t.l*t.h*t.d/1e9);
+const bk=t.aac?['aac',n*t.l*t.h*t.d/1e9]:s('b_ty').startsWith('cc')?['ccb',null]:['brick',n];const out=[['Blocks / bricks',fmt(n,0)+' nos',1,bk],['Wall area',fmt(A*M2SQFT,0)+' sq ft · '+fmt(A,2)+' m²'],['Masonry volume',fmt(W,3)+' m³']];
+if(t.aac){out.push(['Block jointing adhesive',fmt(W*25,0)+' kg · '+Math.ceil(W*25/40)+' bags (40 kg)',0,['aacadh',W*25]])}else{const wet=Math.max(W-blk,0),dry=wet*1.33,r=v('b_mr');const cem=dry/(1+r);out.push(['Mortar (wet)',fmt(wet,3)+' m³'],['Cement',Math.ceil(cem*1440/50)+' bags (50 kg)',0,['cement',Math.ceil(cem*1440/50)]],['Sand',fmt(cem*r,3)+' m³ · '+fmt(cem*r*M3CFT,1)+' cft',0,['sand',cem*r*M3CFT/100]])}
+return box(out)},
+note:'Joints: 10 mm cement mortar for bricks/concrete blocks, 3 mm thin-joint adhesive for AAC (~25 kg/m³). Mortar dry volume factor 1.33. Deduct lintels/beams for accurate counts.'}
+];
+const UN={length:{'Millimetre (mm)':0.001,'Centimetre (cm)':0.01,'Metre (m)':1,'Kilometre (km)':1000,'Inch':0.0254,'Feet':0.3048,'Yard':0.9144,'Running feet (rft)':0.3048},
+area:{'Square feet (sq ft)':0.09290304,'Square metre (m²)':1,'Square yard (gaj)':0.83612736,'Guntha':101.17,'Cent':40.4686,'Ground':222.967,'Acre':4046.856,'Hectare':10000},
+volume:{'Cubic feet (cft)':0.0283168,'Cubic metre (m³)':1,'Brass (100 cft)':2.83168,'Litre':0.001,'Cubic yard':0.764555,'US gallon':0.00378541},
+weight:{'Gram':0.001,'Kilogram (kg)':1,'Quintal':100,'Metric tonne (MT)':1000,'Pound (lb)':0.453592,'Cement bag (50 kg)':50},
+pressure:{'N/mm² (MPa)':1,'kg/cm²':0.0980665,'kN/m²':0.001,'Bar':0.1,'psi':0.00689476}};
+function fillU(){const k=Object.keys(UN[s('u_t')]);$('u_f').innerHTML=k.map(x=>`<option>${x}</option>`).join('');$('u_f').selectedIndex=s('u_t')==='area'?0:Math.min(2,k.length-1)}
+const WT=[[1,11,18.1],[1.5,14,12.1],[2.5,18,7.41],[4,24,4.61],[6,31,3.08],[10,42,1.83],[16,57,1.15],[25,72,0.727],[35,90,0.524],[50,115,0.387],[70,143,0.268],[95,170,0.193],[120,195,0.153]];
+const BT={aac100:{l:600,h:200,d:100,w:100,j:3,aac:1},aac150:{l:600,h:200,d:150,w:150,j:3,aac:1},aac200:{l:600,h:200,d:200,w:200,j:3,aac:1},
+cc100:{l:400,h:200,d:100,w:100,j:10},cc150:{l:400,h:200,d:150,w:150,j:10},cc200:{l:400,h:200,d:200,w:200,j:10},
+brick:{l:230,h:75,d:110,w:230,j:10,wy:1},brick4:{l:230,h:75,d:110,w:115,j:10},fly:{l:230,h:75,d:100,w:230,j:10,wy:1}};
+$('nav').innerHTML=`<a href="#home" id="n_home"><i>▦</i>All calculators</a>`+C.map(c=>`<a href="#${c.id}" id="n_${c.id}"><i>${c.i}</i>${c.n}</a>`).join('')+`<a href="#suggest" id="n_suggest"><i>✎</i>Suggest a calculator</a>`;
+$('jump').innerHTML='<option value="home">All calculators</option>'+C.map(c=>`<option value="${c.id}">${c.n.replace(' Calculator','')}</option>`).join('')+'<option value="suggest">Suggest a calculator</option>';
+$('jump').onchange=e=>location.hash=e.target.value;
+$('main').innerHTML=`<section id="sec_home"><h1>Site calculators</h1><p class="lead">Quick thumb-rule estimates in Indian units. Pick a calculator.</p><div class="home">${C.map(c=>`<a href="#${c.id}"><i>${c.i}</i>${c.n.replace(' Calculator','')}</a>`).join('')}<a href="#suggest" class="sug"><i>NEW</i>Suggest a calculator</a></div></section>`+
+C.map(c=>`<section id="sec_${c.id}"><h1>${c.n}</h1><p class="lead">${c.d}</p><div class="what"><b>What you get:</b> ${WHAT[c.id]}</div><div class="grid"><div class="card"><h3>Inputs</h3><div class="f">${c.f()}</div></div><div class="card"><h3>Results</h3><div class="res" id="res_${c.id}"></div><div class="note">${c.note}</div></div></div></section>`).join('')+
+`<section id="sec_suggest"><h1>Suggest a calculator</h1><p class="lead">Need a calculator that isn't here? Tell us and we'll build it. No contact details needed.</p><div class="card"><div class="chat" id="chat"><div class="msg bot">Hi! Which calculator would help you on site? Describe what you want to calculate and the inputs you'd enter.</div></div><form class="send" id="sf"><textarea id="sm" maxlength="1000" placeholder="e.g. Plaster quantity for internal walls in sq ft…" required></textarea><button type="submit">Send</button></form></div></section>`;
+$('sf').onsubmit=async e=>{e.preventDefault();const t=$('sm').value.trim();if(!t)return;const ch=$('chat');ch.insertAdjacentHTML('beforeend','<div class="msg me"></div>');ch.lastChild.textContent=t;$('sm').value='';
+let ok=false;try{const r=await fetch(SUGGEST_URL,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({suggestion:t,page:location.hash})});ok=r.ok}catch(_){}
+ch.insertAdjacentHTML('beforeend',`<div class="msg bot">${ok?'Thanks! Your suggestion has reached the OCTA team. Anything else?':'Sorry, that didn\'t go through. Please try again in a moment.'}</div>`);ch.scrollTop=ch.scrollHeight};
+function calc(id){const c=C.find(x=>x.id===id);try{$('res_'+id).innerHTML=c.c()}catch(e){$('res_'+id).innerHTML='Check inputs'}}
+C.forEach(c=>{c.init&&c.init();$('sec_'+c.id).addEventListener('input',()=>calc(c.id));calc(c.id)});
+document.addEventListener('click',e=>{const r=e.target.closest('.r.has');document.querySelectorAll('.r.show').forEach(x=>x!==r&&x.classList.remove('show'));if(r)r.classList.toggle('show')});
+const IDS=['home','suggest',...C.map(c=>c.id)];
+function route(){let id=location.hash.slice(1)||'home';if(!IDS.includes(id))id='home';IDS.forEach(k=>{$('sec_'+k).classList.toggle('on',k===id);$('n_'+k)&&$('n_'+k).classList.toggle('on',k===id);$('t_'+k)&&$('t_'+k).classList.toggle('on',k===id)});$('jump').value=id;scrollTo(0,0)}
+addEventListener('hashchange',route);route();
+</script></body></html>
